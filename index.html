@@ -1,813 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Letter for Adrita ♡</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Cute Proposal for Adrita 💕</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap');
+      
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #ffeef8 0%, #ffb3d9 50%, #ff99cc 100%);
+        font-family: 'Quicksand', sans-serif;
+        overflow: hidden;
+        position: relative;
+      }
 
-        body {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
-            font-family: 'Kalam', cursive;
-            overflow-x: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
+      body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+          radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(255, 192, 203, 0.3) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(255, 105, 180, 0.2) 0%, transparent 50%);
+        pointer-events: none;
+      }
 
-        /* Cute Background Elements */
-        .bg-elements {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
+      .container {
+        position: relative;
+        z-index: 1;
+      }
 
-        .cherry-blossom {
-            position: absolute;
-            color: #ffb6c1;
-            font-size: 16px;
-            animation: fall 8s linear infinite;
-            opacity: 0.7;
-        }
+      .valentines {
+        position: relative;
+        top: 50px;
+        cursor: pointer;
+        animation: up 3s ease-in-out infinite;
+        filter: drop-shadow(0 10px 20px rgba(255, 105, 180, 0.3));
+      }
 
-        .star {
-            position: absolute;
-            color: #ffd700;
-            font-size: 12px;
-            animation: twinkle 3s ease-in-out infinite;
+      @keyframes up {
+        0%, 100% {
+          transform: translateY(0) rotate(0deg);
         }
-
-        @keyframes fall {
-            0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.7; }
-            90% { opacity: 0.7; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        50% {
+          transform: translateY(-30px) rotate(1deg);
         }
+      }
 
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
+      .envelope {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        background: linear-gradient(145deg, #ffb3d9, #ff99cc);
+        border-radius: 15px;
+        box-shadow: 
+          0 8px 32px rgba(255, 105, 180, 0.4),
+          inset 0 2px 4px rgba(255, 255, 255, 0.3);
+      }
+
+      .envelope:before {
+        background: linear-gradient(145deg, #ffb3d9, #ff99cc);
+        content: "";
+        position: absolute;
+        width: 212px;
+        height: 212px;
+        transform: rotate(45deg);
+        top: -105px;
+        left: 44px;
+        border-radius: 30px 0 0 0;
+        box-shadow: 
+          0 4px 16px rgba(255, 105, 180, 0.3),
+          inset 0 2px 4px rgba(255, 255, 255, 0.2);
+      }
+
+      .card {
+        position: absolute;
+        background: linear-gradient(145deg, #fff0f5, #ffe4e6);
+        width: 270px;
+        height: 170px;
+        top: 10px;
+        left: 15px;
+        box-shadow: 
+          -5px -5px 100px rgba(255, 105, 180, 0.4),
+          0 4px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        border: 2px solid rgba(255, 182, 193, 0.5);
+      }
+
+      .card:before {
+        content: "";
+        position: absolute;
+        border: 3px solid #ff69b4;
+        border-style: dotted;
+        width: 240px;
+        height: 140px;
+        left: 12px;
+        top: 12px;
+        border-radius: 8px;
+      }
+
+      .text {
+        position: absolute;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 26px;
+        top: 35px;
+        left: 15px;
+        width: 240px;
+        color: #d63384;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        letter-spacing: 0.5px;
+      }
+
+      .hearts {
+        position: absolute;
+      }
+
+      .one, .two, .three, .four, .five {
+        background-color: #ff69b4;
+        display: inline-block;
+        height: 14px;
+        margin: 0 8px;
+        position: relative;
+        transform: rotate(-45deg);
+        width: 14px;
+        top: 50px;
+        filter: drop-shadow(0 2px 4px rgba(255, 105, 180, 0.3));
+      }
+
+      .one:before, .one:after,
+      .two:before, .two:after,
+      .three:before, .three:after,
+      .four:before, .four:after,
+      .five:before, .five:after {
+        content: "";
+        background-color: #ff69b4;
+        border-radius: 50%;
+        height: 14px;
+        position: absolute;
+        width: 14px;
+      }
+
+      .one:before, .two:before, .three:before, .four:before, .five:before {
+        top: -7px;
+        left: 0;
+      }
+
+      .one:after, .two:after, .three:after, .four:after, .five:after {
+        left: 7px;
+        top: 0;
+      }
+
+      .one {
+        left: 5px;
+        animation: heart 1.2s ease-out infinite;
+      }
+
+      .two {
+        left: 25px;
+        animation: heart 1.8s ease-out infinite;
+      }
+
+      .three {
+        left: 45px;
+        animation: heart 1.4s ease-out infinite;
+      }
+
+      .four {
+        left: 65px;
+        animation: heart 2.1s ease-out infinite;
+      }
+
+      .five {
+        left: 85px;
+        animation: heart 1.6s ease-out infinite;
+      }
+
+      @keyframes heart {
+        0% {
+          transform: translateY(0) rotate(-45deg) scale(0.4);
+          opacity: 1;
         }
-
-        .container {
-            position: relative;
-            width: 100%;
-            max-width: 400px;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10;
+        100% {
+          transform: translateY(-160px) rotate(-45deg) scale(1.4);
+          opacity: 0.2;
         }
+      }
 
-        /* Floating Hearts Background */
-        .heart {
-            position: absolute;
-            font-size: 18px;
-            animation: float 6s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 2;
+      .front {
+        position: absolute;
+        border-right: 180px solid #ffb6c1;
+        border-top: 95px solid transparent;
+        border-bottom: 100px solid transparent;
+        left: 120px;
+        top: 5px;
+        width: 0;
+        height: 0;
+        z-index: 10;
+        filter: drop-shadow(0 2px 8px rgba(255, 182, 193, 0.4));
+      }
+
+      .front:before {
+        position: absolute;
+        content: "";
+        border-left: 300px solid #ffc0cb;
+        border-top: 195px solid transparent;
+        left: -120px;
+        top: -95px;
+        width: 0;
+        height: 0;
+      }
+
+      .shadow {
+        position: absolute;
+        width: 330px;
+        height: 25px;
+        border-radius: 50%;
+        background: radial-gradient(ellipse, rgba(255, 105, 180, 0.3) 0%, transparent 70%);
+        top: 265px;
+        left: -15px;
+        animation: scale 3s ease-in-out infinite;
+        z-index: -1;
+      }
+
+      @keyframes scale {
+        0%, 100% {
+          transform: scaleX(1);
         }
-
-        .heart:nth-child(1) { left: 10%; animation-delay: 0s; color: #ff69b4; }
-        .heart:nth-child(2) { left: 20%; animation-delay: 1s; color: #ffb6c1; }
-        .heart:nth-child(3) { left: 30%; animation-delay: 2s; color: #ff1493; }
-        .heart:nth-child(4) { left: 40%; animation-delay: 3s; color: #ff69b4; }
-        .heart:nth-child(5) { left: 50%; animation-delay: 4s; color: #ffb6c1; }
-        .heart:nth-child(6) { left: 60%; animation-delay: 5s; color: #ff1493; }
-        .heart:nth-child(7) { left: 70%; animation-delay: 1.5s; color: #ff69b4; }
-        .heart:nth-child(8) { left: 80%; animation-delay: 2.5s; color: #ffb6c1; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            50% { opacity: 0.8; }
-            100% { transform: translateY(-20px) rotate(360deg); opacity: 0; }
+        50% {
+          transform: scaleX(0.85);
         }
+      }
 
-        /* Cute Anime Envelope */
-        .envelope {
-            position: relative;
-            width: 320px;
-            height: 220px;
-            cursor: pointer;
-            transform-style: preserve-3d;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: kawaii-pulse 2.5s ease-in-out infinite;
-            filter: drop-shadow(0 8px 25px rgba(255, 105, 180, 0.3));
-        }
+      .cute-elements {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
 
-        .envelope:hover {
-            transform: scale(1.08) rotateY(8deg) rotateX(3deg);
-            animation: kawaii-bounce 0.6s ease-in-out;
-            filter: drop-shadow(0 12px 35px rgba(255, 105, 180, 0.4));
-        }
+      .sparkle {
+        position: absolute;
+        font-size: 20px;
+        animation: sparkle 2.5s linear infinite;
+        color: #ff69b4;
+      }
 
-        .envelope.shake {
-            animation: anime-shake 0.6s ease-in-out;
-        }
+      .sparkle:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+      .sparkle:nth-child(2) { top: 75%; left: 15%; animation-delay: 0.8s; }
+      .sparkle:nth-child(3) { top: 35%; left: 85%; animation-delay: 1.2s; }
+      .sparkle:nth-child(4) { top: 65%; left: 75%; animation-delay: 1.8s; }
+      .sparkle:nth-child(5) { top: 10%; left: 90%; animation-delay: 0.4s; }
+      .sparkle:nth-child(6) { top: 80%; left: 85%; animation-delay: 1.6s; }
 
-        @keyframes kawaii-pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.03); }
+      @keyframes sparkle {
+        0%, 100% { 
+          opacity: 0; 
+          transform: scale(0) rotate(0deg); 
         }
+        50% { 
+          opacity: 1; 
+          transform: scale(1.2) rotate(180deg); 
+        }
+      }
 
-        @keyframes kawaii-bounce {
-            0%, 100% { transform: scale(1.08) rotateY(8deg) rotateX(3deg); }
-            50% { transform: scale(1.12) rotateY(10deg) rotateX(5deg); }
-        }
+      .floating-hearts {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
 
-        @keyframes anime-shake {
-            0%, 100% { transform: translateX(0) rotate(0deg); }
-            20% { transform: translateX(-8px) rotate(-2deg); }
-            40% { transform: translateX(8px) rotate(2deg); }
-            60% { transform: translateX(-6px) rotate(-1deg); }
-            80% { transform: translateX(6px) rotate(1deg); }
-        }
+      .floating-heart {
+        position: absolute;
+        font-size: 16px;
+        animation: float 4s ease-in-out infinite;
+        color: rgba(255, 105, 180, 0.6);
+      }
 
-        .envelope-body {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(145deg, #fff0f5, #ffe4e6);
-            border: 3px solid #ff69b4;
-            border-radius: 12px;
-            box-shadow: 
-                0 8px 25px rgba(255, 105, 180, 0.2),
-                inset 0 2px 8px rgba(255, 255, 255, 0.8),
-                inset 0 -2px 8px rgba(255, 105, 180, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
+      .floating-heart:nth-child(1) { top: 20%; left: 5%; animation-delay: 0s; }
+      .floating-heart:nth-child(2) { top: 60%; left: 95%; animation-delay: 1s; }
+      .floating-heart:nth-child(3) { top: 40%; left: 3%; animation-delay: 2s; }
+      .floating-heart:nth-child(4) { top: 80%; left: 92%; animation-delay: 3s; }
 
-        .envelope-body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 182, 193, 0.2) 0%, transparent 50%);
-            pointer-events: none;
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.3;
         }
-
-        .envelope-flap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 55%;
-            background: linear-gradient(145deg, #ffb6c1, #ff69b4);
-            border-bottom: 2px solid #ff1493;
-            transform-origin: bottom;
-            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 2;
-            clip-path: polygon(0 0, 100% 0, 50% 100%);
-            box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+        50% {
+          transform: translateY(-20px) rotate(10deg);
+          opacity: 0.8;
         }
-
-        .envelope-flap::after {
-            content: '💕';
-            position: absolute;
-            top: 20%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 24px;
-            animation: heart-beat 2s ease-in-out infinite;
-        }
-
-        @keyframes heart-beat {
-            0%, 100% { transform: translateX(-50%) scale(1); }
-            50% { transform: translateX(-50%) scale(1.1); }
-        }
-
-        .envelope.opened .envelope-flap {
-            transform: rotateX(-180deg);
-        }
-
-        .envelope-content {
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            right: 25px;
-            bottom: 25px;
-            background: 
-                linear-gradient(145deg, #ffffff, #fef7f7),
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 19px,
-                    rgba(255, 182, 193, 0.3) 20px
-                );
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            color: #d14d72;
-            text-align: center;
-            box-shadow: inset 0 2px 8px rgba(255, 105, 180, 0.1);
-            font-weight: 500;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-        }
-
-        /* Kawaii Letter Preview */
-        .letter-preview {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 280px;
-            height: 180px;
-            background: 
-                linear-gradient(145deg, #ffffff, #fef7f7),
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 19px,
-                    rgba(255, 182, 193, 0.2) 20px
-                );
-            border: 2px solid #ff69b4;
-            border-radius: 12px;
-            box-shadow: 
-                0 8px 25px rgba(255, 105, 180, 0.25),
-                inset 0 1px 4px rgba(255, 255, 255, 0.8);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 15;
-            overflow: hidden;
-            cursor: grab;
-            filter: drop-shadow(0 4px 15px rgba(255, 105, 180, 0.2));
-        }
-
-        .letter-preview.show {
-            opacity: 1;
-            visibility: visible;
-            animation: kawaii-appear 0.8s ease-out;
-        }
-
-        @keyframes kawaii-appear {
-            0% { transform: translate(-50%, -50%) scale(0.5) rotate(-10deg); opacity: 0; }
-            60% { transform: translate(-50%, -50%) scale(1.1) rotate(2deg); }
-            100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); opacity: 1; }
-        }
-
-        .letter-preview.dragging {
-            cursor: grabbing;
-            transform: translate(-50%, -50%) scale(1.05);
-        }
-
-        .letter-preview-content {
-            padding: 20px;
-            font-size: 14px;
-            color: #d14d72;
-            line-height: 1.6;
-            position: relative;
-            font-weight: 400;
-        }
-
-        .letter-preview-content strong {
-            color: #ff1493;
-            font-weight: 600;
-        }
-
-        .swipe-hint {
-            position: absolute;
-            bottom: 12px;
-            right: 18px;
-            font-size: 11px;
-            color: #ff69b4;
-            opacity: 0.9;
-            animation: kawaii-bounce-hint 2s infinite;
-            font-weight: 500;
-        }
-
-        @keyframes kawaii-bounce-hint {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(8px); }
-        }
-
-        /* Anime Style Full Letter */
-        .full-letter {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(135deg, rgba(255, 105, 180, 0.9) 0%, rgba(255, 182, 193, 0.9) 100%),
-                radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 100;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .full-letter.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .letter-paper {
-            width: 90%;
-            max-width: 520px;
-            max-height: 85vh;
-            background: 
-                linear-gradient(145deg, #ffffff, #fef7f7),
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 24px,
-                    rgba(255, 182, 193, 0.15) 25px
-                );
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 
-                0 25px 80px rgba(255, 105, 180, 0.4),
-                inset 0 2px 8px rgba(255, 255, 255, 0.8),
-                0 0 0 3px #ff69b4,
-                0 0 0 6px rgba(255, 105, 180, 0.3);
-            position: relative;
-            overflow-y: auto;
-            animation: letter-appear 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        @keyframes letter-appear {
-            0% { transform: scale(0.8) rotateY(-15deg); opacity: 0; }
-            100% { transform: scale(1) rotateY(0deg); opacity: 1; }
-        }
-
-        .letter-paper::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 40px;
-            width: 2px;
-            height: 100%;
-            background: #ffb6c1;
-            opacity: 0.5;
-        }
-
-        .letter-header {
-            text-align: center;
-            margin-bottom: 35px;
-            color: #d14d72;
-            position: relative;
-        }
-
-        .letter-header::after {
-            content: '🌸 ✨ 🌸';
-            display: block;
-            margin-top: 10px;
-            font-size: 16px;
-        }
-
-        .letter-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #ff1493;
-            text-shadow: 0 2px 4px rgba(255, 105, 180, 0.3);
-            letter-spacing: 1px;
-        }
-
-        .letter-date {
-            font-size: 16px;
-            font-style: italic;
-            opacity: 0.8;
-            color: #d14d72;
-            font-weight: 400;
-        }
-
-        .letter-body {
-            font-size: 17px;
-            line-height: 2;
-            color: #4a4a4a;
-            text-align: justify;
-            margin-bottom: 35px;
-            font-weight: 400;
-        }
-
-        .letter-body p {
-            margin-bottom: 20px;
-            text-indent: 20px;
-        }
-
-        .letter-body p:first-child {
-            font-weight: 500;
-            color: #d14d72;
-        }
-
-        .letter-signature {
-            text-align: right;
-            font-family: 'Dancing Script', cursive;
-            font-size: 22px;
-            font-weight: 600;
-            color: #ff1493;
-            margin-top: 25px;
-            text-shadow: 0 1px 2px rgba(255, 105, 180, 0.3);
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            background: linear-gradient(145deg, #ff69b4, #ff1493);
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            color: white;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
-            font-weight: bold;
-        }
-
-        .close-btn:hover {
-            background: linear-gradient(145deg, #ff1493, #dc143c);
-            transform: rotate(90deg) scale(1.1);
-            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
-        }
-
-        /* Kawaii Sparkle Effects */
-        .sparkle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: radial-gradient(circle, #ffd700 0%, #ff69b4 100%);
-            border-radius: 50%;
-            animation: kawaii-sparkle 2.5s linear infinite;
-            pointer-events: none;
-        }
-
-        .sparkle::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.6) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: sparkle-glow 2.5s linear infinite;
-        }
-
-        @keyframes kawaii-sparkle {
-            0% { transform: scale(0) rotate(0deg); opacity: 0; }
-            20% { transform: scale(1) rotate(72deg); opacity: 1; }
-            80% { transform: scale(1) rotate(288deg); opacity: 1; }
-            100% { transform: scale(0) rotate(360deg); opacity: 0; }
-        }
-
-        @keyframes sparkle-glow {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 480px) {
-            .envelope {
-                width: 280px;
-                height: 190px;
-            }
-            
-            .letter-preview {
-                width: 240px;
-                height: 150px;
-            }
-            
-            .letter-paper {
-                padding: 25px;
-                margin: 15px;
-            }
-            
-            .letter-title {
-                font-size: 26px;
-            }
-            
-            .letter-body {
-                font-size: 15px;
-                line-height: 1.8;
-            }
-            
-            .letter-signature {
-                font-size: 18px;
-            }
-        }
-
-        /* Cute animations for page load */
-        @keyframes page-load {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .container {
-            animation: page-load 1s ease-out;
-        }
+      }
     </style>
-</head>
-<body>
-    <!-- Cute Background Elements -->
-    <div class="bg-elements">
-        <div class="cherry-blossom" style="left: 10%; animation-delay: 0s;">🌸</div>
-        <div class="cherry-blossom" style="left: 20%; animation-delay: 2s;">🌺</div>
-        <div class="cherry-blossom" style="left: 30%; animation-delay: 4s;">🌸</div>
-        <div class="cherry-blossom" style="left: 40%; animation-delay: 1s;">🌺</div>
-        <div class="cherry-blossom" style="left: 50%; animation-delay: 3s;">🌸</div>
-        <div class="cherry-blossom" style="left: 60%; animation-delay: 5s;">🌺</div>
-        <div class="cherry-blossom" style="left: 70%; animation-delay: 1.5s;">🌸</div>
-        <div class="cherry-blossom" style="left: 80%; animation-delay: 3.5s;">🌺</div>
-        <div class="cherry-blossom" style="left: 90%; animation-delay: 2.5s;">🌸</div>
-        
-        <div class="star" style="left: 15%; top: 20%; animation-delay: 0s;">✨</div>
-        <div class="star" style="left: 85%; top: 30%; animation-delay: 1s;">⭐</div>
-        <div class="star" style="left: 25%; top: 70%; animation-delay: 2s;">✨</div>
-        <div class="star" style="left: 75%; top: 80%; animation-delay: 0.5s;">⭐</div>
-        <div class="star" style="left: 45%; top: 15%; animation-delay: 1.5s;">✨</div>
+  </head>
+  <body>
+    <div class="cute-elements">
+      <div class="sparkle">✨</div>
+      <div class="sparkle">💫</div>
+      <div class="sparkle">⭐</div>
+      <div class="sparkle">✨</div>
+      <div class="sparkle">💫</div>
+      <div class="sparkle">⭐</div>
     </div>
-
-    <!-- Floating Hearts -->
-    <div class="heart">💖</div>
-    <div class="heart">💕</div>
-    <div class="heart">💗</div>
-    <div class="heart">💝</div>
-    <div class="heart">💖</div>
-    <div class="heart">💕</div>
-    <div class="heart">💗</div>
-    <div class="heart">💝</div>
-
-    <div class="container">
-        <!-- Kawaii Envelope -->
-        <div class="envelope" id="envelope">
-            <div class="envelope-body">
-                <div class="envelope-flap"></div>
-                <div class="envelope-content">
-                    💌 For My Beloved Adrita 💌<br>
-                    <small style="font-size: 12px; opacity: 0.8;">~with all my love~</small>
-                </div>
-            </div>
-        </div>
-
-        <!-- Letter Preview -->
-        <div class="letter-preview" id="letterPreview">
-            <div class="letter-preview-content">
-                <p><strong>My Dearest Adrita-chan~ 💕</strong></p>
-                <p>Every day with you feels like living in a beautiful anime where love conquers all and every moment sparkles with magic...</p>
-                <div class="swipe-hint">Swipe to open → ✨</div>
-            </div>
-        </div>
+    
+    <div class="floating-hearts">
+      <div class="floating-heart">💕</div>
+      <div class="floating-heart">💖</div>
+      <div class="floating-heart">💗</div>
+      <div class="floating-heart">💝</div>
     </div>
-
-    <!-- Full Letter -->
-    <div class="full-letter" id="fullLetter">
-        <div class="letter-paper">
-            <button class="close-btn" id="closeBtn">×</button>
-            <div class="letter-header">
-                <div class="letter-title">A Love Letter to My Adrita-chan</div>
-                <div class="letter-date">Written with endless love and kawaii feelings ♡</div>
-            </div>
-            <div class="letter-body">
-                <p>My Dearest Adrita-chan~ 💕</p>
-                
-                <p>Konnichiwa my precious one! Every day with you feels like I'm living in the most beautiful shoujo anime, where cherry blossoms dance in the wind and every moment is filled with sparkling magic. You are my main character, my heroine, and the reason my heart goes "doki doki" every single day!</p>
-                
-                <p>Just like in anime, you appeared in my life when I least expected it, bringing color to my monochrome world. Your smile is brighter than any studio animation, your laugh more melodious than the sweetest character song, and your eyes... oh, your eyes sparkle like the most beautiful anime gems I've ever seen!</p>
-                
-                <p>I love how you scrunch your nose when you're concentrating (so kawaii!), how you get excited about the little things that make life beautiful, and how you make even the most ordinary moments feel like a romantic anime scene. When you're happy, it's like watching sakura petals dance in spring - absolutely mesmerizing!</p>
-                
-                <p>You know how in anime, the main characters always have that special power that saves the day? Well, you have that power too - the power to make my heart flutter, to turn my bad days into good ones, and to make me believe that fairy tale love really exists. You're my real-life waifu, but even better because you're real and you chose me!</p>
-                
-                <p>I promise to protect your smile like the most dedicated anime protagonist, to support your dreams with the determination of a shounen hero, and to love you with all the passion of a romantic anime confession scene under the cherry blossoms.</p>
-                
-                <p>Just like how every great anime has its perfect ending, I want our story to be eternal - filled with adventure, laughter, sweet moments, and endless love. You're not just my girlfriend; you're my co-star in this beautiful anime called life!</p>
-                
-                <p>Aishiteru, my beautiful Adrita-chan! You make every day feel like a kawaii adventure! 🌸✨</p>
-            </div>
-            <div class="letter-signature">
-                Forever your devoted admirer,<br>
-                With all my otaku heart~ ♡<br>
-                <small style="font-size: 16px;">P.S. - You're more beautiful than any anime character! (´∀｀)♡</small>
-            </div>
+    
+    <div class="container">  
+      <div class="valentines">
+        <div class="envelope"></div>
+        <div class="front"></div>
+        <div class="card">
+          <div class="text">My Sweet Adrita 💕<br/>Will you be<br/>my forever? 💍<br/>Marry me? 🥺✨</div>
         </div>
+        <div class="hearts">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+          <div class="four"></div>
+          <div class="five"></div>
+        </div>
+      </div>
+      <div class="shadow"></div>
     </div>
 
     <script>
-        const envelope = document.getElementById('envelope');
-        const letterPreview = document.getElementById('letterPreview');
-        const fullLetter = document.getElementById('fullLetter');
-        const closeBtn = document.getElementById('closeBtn');
-
-        let isEnvelopeOpened = false;
-        let isDragging = false;
-        let startX = 0;
-        let currentX = 0;
-
-        // Envelope click handler with kawaii effects
-        envelope.addEventListener('click', function() {
-            if (!isEnvelopeOpened) {
-                // Add kawaii shake animation
-                envelope.classList.add('shake');
-                createKawaiiSparkles();
-                
-                setTimeout(() => {
-                    envelope.classList.remove('shake');
-                    envelope.classList.add('opened');
-                    
-                    setTimeout(() => {
-                        letterPreview.classList.add('show');
-                        isEnvelopeOpened = true;
-                        createMoreKawaiiSparkles();
-                    }, 500);
-                }, 600);
-            }
-        });
-
-        // Touch and mouse events for swipe
-        letterPreview.addEventListener('mousedown', startDrag);
-        letterPreview.addEventListener('touchstart', startDrag);
-        
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('touchmove', drag);
-        
-        document.addEventListener('mouseup', endDrag);
-        document.addEventListener('touchend', endDrag);
-
-        function startDrag(e) {
-            if (!isEnvelopeOpened) return;
-            
-            isDragging = true;
-            letterPreview.classList.add('dragging');
-            
-            const clientX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
-            startX = clientX;
-            currentX = clientX;
-            
-            e.preventDefault();
-        }
-
-        function drag(e) {
-            if (!isDragging) return;
-            
-            const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-            currentX = clientX;
-            
-            const deltaX = currentX - startX;
-            
-            if (deltaX > 0) {
-                letterPreview.style.transform = `translate(-50%, -50%) translateX(${Math.min(deltaX, 120)}px) rotate(${Math.min(deltaX / 12, 12)}deg)`;
-                letterPreview.style.opacity = Math.max(1 - deltaX / 250, 0.4);
-            }
-            
-            e.preventDefault();
-        }
-
-        function endDrag(e) {
-            if (!isDragging) return;
-            
-            isDragging = false;
-            letterPreview.classList.remove('dragging');
-            
-            const deltaX = currentX - startX;
-            
-            if (deltaX > 100) {
-                // Open full letter with kawaii effect
-                letterPreview.style.transform = 'translate(-50%, -50%) translateX(350px) rotate(45deg) scale(0.8)';
-                letterPreview.style.opacity = '0';
-                
-                setTimeout(() => {
-                    fullLetter.classList.add('show');
-                    createMagicalSparkles();
-                }, 400);
-            } else {
-                // Kawaii snap back
-                letterPreview.style.transform = 'translate(-50%, -50%)';
-                letterPreview.style.opacity = '1';
-            }
-        }
-
-        // Close button handler
-        closeBtn.addEventListener('click', function() {
-            fullLetter.classList.remove('show');
-            
-            setTimeout(() => {
-                letterPreview.style.transform = 'translate(-50%, -50%)';
-                letterPreview.style.opacity = '1';
-            }, 400);
-        });
-
-        // Click outside to close
-        fullLetter.addEventListener('click', function(e) {
-            if (e.target === fullLetter) {
-                closeBtn.click();
-            }
-        });
-
-        // Kawaii Sparkle Effects
-        function createKawaiiSparkles() {
-            const colors = ['#ff69b4', '#ffd700', '#ff1493', '#ffb6c1', '#ff00ff'];
-            for (let i = 0; i < 25; i++) {
-                setTimeout(() => {
-                    const sparkle = document.createElement('div');
-                    sparkle.className = 'sparkle';
-                    sparkle.style.left = Math.random() * 100 + '%';
-                    sparkle.style.top = Math.random() * 100 + '%';
-                    sparkle.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]} 0%, transparent 70%)`;
-                    sparkle.style.animationDelay = Math.random() * 2 + 's';
-                    document.body.appendChild(sparkle);
-                    
-                    setTimeout(() => {
-                        sparkle.remove();
-                    }, 2500);
-                }, i * 80);
-            }
-        }
-
-        function createMoreKawaiiSparkles() {
-            const colors = ['#ff69b4', '#ffd700', '#ff1493', '#ffb6c1', '#ff00ff'];
-            for (let i = 0; i < 35; i++) {
-                setTimeout(() => {
-                    const sparkle = document.createElement('div');
-                    sparkle.className = 'sparkle';
-                    sparkle.style.left = Math.random() * 100 + '%';
-                    sparkle.style.top = Math.random() * 100 + '%';
-                    sparkle.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]} 0%, transparent 70%)`;
-                    sparkle.style.animationDelay = Math.random() * 2.5 + 's';
-                    sparkle.style.animationDuration = (1.5 + Math.random()) + 's';
-                    document.body.appendChild(sparkle);
-                    
-                    setTimeout(() => {
-                        sparkle.remove();
-                    }, 3000);
-                }, i * 60);
-            }
-        }
-
-        function createMagicalSparkles() {
-            const colors = ['#ff69b4', '#ffd700', '#ff1493', '#ffb6c1', '#ff00ff', '#00ffff'];
-            for (let i = 0; i < 60; i++) {
-                setTimeout(() => {
-                    const sparkle = document.createElement('div');
-                    sparkle.className = 'sparkle';
-                    sparkle.style.left = Math.random() * 100 + '%';
-                    sparkle.style.top = Math.random() * 100 + '%';
-                    sparkle.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]} 0%, transparent 70%)`;
-                    sparkle.style.animationDelay = Math.random() * 2 + 's';
-                    sparkle.style.animationDuration = (2 + Math.random()) + 's';
-                    sparkle.style.width = (4 + Math.random() * 4) + 'px';
-                    sparkle.style.height = sparkle.style.width;
-                    document.body.appendChild(sparkle);
-                    
-                    setTimeout(() => {
-                        sparkle.remove();
-                    }, 4000);
-                }, i * 40);
-            }
-        }
-
-        // Prevent default touch behaviors
-        document.addEventListener('touchmove', function(e) {
-            if (isDragging) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-
-        // Add some cute interactions
-        envelope.addEventListener('mouseenter', function() {
-            if (!isEnvelopeOpened) {
-                createKawaiiSparkles();
-            }
-        });
-
-        // Kawaii loading effect
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                createKawaiiSparkles();
-            }, 500);
-        });
+      $(document).ready(function () {
+        $(".container")
+          .mouseenter(function () {
+            $(".card").stop().animate(
+              {
+                top: "-90px",
+              },
+              "slow"
+            );
+          })
+          .mouseleave(function () {
+            $(".card").stop().animate(
+              {
+                top: 0,
+              },
+              "slow"
+            );
+          });
+      });
     </script>
-</body>
+  </body>
 </html>
