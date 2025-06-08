@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Cute Proposal for Adrita 💕</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>A Special Letter for Adrita 💕</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap');
       
@@ -17,6 +17,7 @@
         font-family: 'Quicksand', sans-serif;
         overflow: hidden;
         position: relative;
+        margin: 0;
       }
 
       body::before {
@@ -32,7 +33,122 @@
           radial-gradient(circle at 40% 40%, rgba(255, 105, 180, 0.2) 0%, transparent 50%);
         pointer-events: none;
       }
+      
+      /* Auth Pages Styles */
+      .auth-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background: linear-gradient(135deg, #ffeef8 0%, #ffb3d9 50%, #ff99cc 100%);
+        padding: 20px;
+        box-sizing: border-box;
+      }
 
+      .auth-box {
+        background: rgba(255, 255, 255, 0.85);
+        padding: 30px 40px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(255, 105, 180, 0.4);
+        border: 2px solid rgba(255, 182, 193, 0.6);
+        color: #d63384;
+        width: 100%;
+        max-width: 450px;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+
+      .auth-box h1, .auth-box h2 {
+        margin-top: 0;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+      }
+
+      .auth-box p {
+        font-size: 18px;
+        margin-bottom: 25px;
+        line-height: 1.5;
+      }
+
+      .auth-box input, .auth-box button {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 16px;
+        padding: 12px 20px;
+        border-radius: 10px;
+        border: 1px solid #ffb3d9;
+        margin: 8px 5px;
+        box-sizing: border-box;
+      }
+
+      .auth-box input {
+        background: #fff0f5;
+        color: #d63384;
+        width: 100%;
+        max-width: 300px;
+      }
+      
+      .auth-box input::placeholder {
+        color: #ff99cc;
+      }
+
+      .input-group {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .input-group input {
+        width: calc(50% - 15px);
+        min-width: 120px;
+      }
+
+      .auth-box button {
+        background: linear-gradient(145deg, #ff69b4, #d63384);
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        border: none;
+        box-shadow: 0 4px 15px rgba(214, 51, 132, 0.5);
+        transition: transform 0.2s, box-shadow 0.2s;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .auth-box button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(214, 51, 132, 0.6);
+      }
+      
+      .error-msg {
+        color: #c70039;
+        font-weight: 600;
+        height: 20px;
+        margin-top: 10px;
+        font-size: 14px !important;
+        transition: opacity 0.3s;
+      }
+
+      @keyframes shake {
+        10%, 90% { transform: translate3d(-1px, 0, 0); }
+        20%, 80% { transform: translate3d(2px, 0, 0); }
+        30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+        40%, 60% { transform: translate3d(4px, 0, 0); }
+      }
+
+      .shake {
+        animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      }
+
+      /* Main Letter Styles */
       .container {
         position: relative;
         z-index: 1;
@@ -93,6 +209,7 @@
           0 4px 20px rgba(0, 0, 0, 0.1);
         border-radius: 12px;
         border: 2px solid rgba(255, 182, 193, 0.5);
+        transition: all 0.5s ease;
       }
 
       .card:before {
@@ -107,19 +224,27 @@
         border-radius: 8px;
       }
 
-      .text {
+      .card-content {
         position: absolute;
         font-family: 'Quicksand', sans-serif;
         font-size: 20px;
         font-weight: 600;
         text-align: center;
-        line-height: 26px;
+        line-height: 28px;
         top: 35px;
         left: 15px;
         width: 240px;
         color: #d63384;
         text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
         letter-spacing: 0.5px;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+
+      .card-content.fade {
+        opacity: 0;
+        transition: opacity 0.3s ease, z-index 0s 0.3s;
+        z-index: -1;
       }
 
       .hearts {
@@ -161,30 +286,11 @@
         top: 0;
       }
 
-      .one {
-        left: 5px;
-        animation: heart 1.2s ease-out infinite;
-      }
-
-      .two {
-        left: 25px;
-        animation: heart 1.8s ease-out infinite;
-      }
-
-      .three {
-        left: 45px;
-        animation: heart 1.4s ease-out infinite;
-      }
-
-      .four {
-        left: 65px;
-        animation: heart 2.1s ease-out infinite;
-      }
-
-      .five {
-        left: 85px;
-        animation: heart 1.6s ease-out infinite;
-      }
+      .one { left: 5px; animation: heart 1.2s ease-out infinite; }
+      .two { left: 25px; animation: heart 1.8s ease-out infinite; }
+      .three { left: 45px; animation: heart 1.4s ease-out infinite; }
+      .four { left: 65px; animation: heart 2.1s ease-out infinite; }
+      .five { left: 85px; animation: heart 1.6s ease-out infinite; }
 
       @keyframes heart {
         0% {
@@ -234,16 +340,12 @@
       }
 
       @keyframes scale {
-        0%, 100% {
-          transform: scaleX(1);
-        }
-        50% {
-          transform: scaleX(0.85);
-        }
+        0%, 100% { transform: scaleX(1); }
+        50% { transform: scaleX(0.85); }
       }
 
       .cute-elements {
-        position: absolute;
+        position: fixed;
         width: 100%;
         height: 100%;
         pointer-events: none;
@@ -265,18 +367,12 @@
       .sparkle:nth-child(6) { top: 80%; left: 85%; animation-delay: 1.6s; }
 
       @keyframes sparkle {
-        0%, 100% { 
-          opacity: 0; 
-          transform: scale(0) rotate(0deg); 
-        }
-        50% { 
-          opacity: 1; 
-          transform: scale(1.2) rotate(180deg); 
-        }
+        0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+        50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
       }
 
       .floating-hearts {
-        position: absolute;
+        position: fixed;
         width: 100%;
         height: 100%;
         pointer-events: none;
@@ -296,71 +392,217 @@
       .floating-heart:nth-child(4) { top: 80%; left: 92%; animation-delay: 3s; }
 
       @keyframes float {
-        0%, 100% {
-          transform: translateY(0) rotate(0deg);
-          opacity: 0.3;
-        }
-        50% {
-          transform: translateY(-20px) rotate(10deg);
-          opacity: 0.8;
-        }
+        0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+        50% { transform: translateY(-20px) rotate(10deg); opacity: 0.8; }
+      }
+
+      .click-instruction {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #d63384;
+        font-size: 16px;
+        font-weight: 600;
+        animation: pulse 2s ease-in-out infinite;
+        text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+        z-index: 20;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+        50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
       }
     </style>
   </head>
   <body>
     <div class="cute-elements">
-      <div class="sparkle">✨</div>
-      <div class="sparkle">💫</div>
-      <div class="sparkle">⭐</div>
-      <div class="sparkle">✨</div>
-      <div class="sparkle">💫</div>
-      <div class="sparkle">⭐</div>
+      <div class="sparkle">✨</div><div class="sparkle">💫</div><div class="sparkle">⭐</div>
+      <div class="sparkle">✨</div><div class="sparkle">💫</div><div class="sparkle">⭐</div>
     </div>
-    
     <div class="floating-hearts">
-      <div class="floating-heart">💕</div>
-      <div class="floating-heart">💖</div>
-      <div class="floating-heart">💗</div>
-      <div class="floating-heart">💝</div>
+      <div class="floating-heart">💕</div><div class="floating-heart">💖</div>
+      <div class="floating-heart">💗</div><div class="floating-heart">💝</div>
     </div>
     
-    <div class="container">  
-      <div class="valentines">
-        <div class="envelope"></div>
-        <div class="front"></div>
-        <div class="card">
-          <div class="text">My Sweet Adrita 💕<br/>Will you be<br/>my forever? 💍<br/>Marry me? 🥺✨</div>
-        </div>
-        <div class="hearts">
-          <div class="one"></div>
-          <div class="two"></div>
-          <div class="three"></div>
-          <div class="four"></div>
-          <div class="five"></div>
-        </div>
+    <!-- Auth Pages -->
+    <div class="auth-container" id="auth-page-1">
+      <div class="auth-box">
+        <h1>Hello Cutie! 💌</h1>
+        <p>You've received a special letter from your BF.</p>
+        <button id="start-btn">Click to Verify</button>
       </div>
-      <div class="shadow"></div>
     </div>
 
+    <div class="auth-container" id="auth-page-2" style="display: none;">
+      <div class="auth-box">
+        <h2>A Quick Question... 🤔</h2>
+        <p>To make sure this is you, what is your boyfriend's birthday?</p>
+        <div class="input-group">
+          <input type="text" id="birth-month" placeholder="Month">
+          <input type="text" id="birth-day" placeholder="Day">
+        </div>
+        <button id="check-birth-btn">Check Answer</button>
+        <p class="error-msg" id="birth-error"></p>
+      </div>
+    </div>
+
+    <div class="auth-container" id="auth-page-3" style="display: none;">
+      <div class="auth-box">
+        <h2>Just one more... 💖</h2>
+        <p>What is the cute nickname you gave him on Insta?</p>
+        <input type="text" id="nickname-input" placeholder="Your cute name for him">
+        <button id="check-nickname-btn">Final Check</button>
+        <p class="error-msg" id="nickname-error"></p>
+      </div>
+    </div>
+
+    <div class="auth-container" id="auth-page-4" style="display: none;">
+        <div class="auth-box">
+          <h2>Correct! 🎉</h2>
+          <p>The letter is yours! Here you go...</p>
+          <button id="show-letter-btn">Reveal Letter</button>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+      <div class="container">  
+        <div class="valentines">
+          <div class="envelope"></div>
+          <div class="front"></div>
+          <div class="card">
+            <div class="card-content" id="content1">
+              Dear Nashra 💕<br/>
+              my cute little best friend<br/>
+            </div>
+            <div class="card-content fade" id="content2">
+              My sweet Cupcake 🧁<br/>
+              Every moment with you is a treat.<br/>
+            </div>
+            <div class="card-content fade" id="content3">
+              My beautiful Butterfly 🦋<br/>
+              You actually give me butterflies NGL<br/>
+            </div>
+            <div class="card-content fade" id="content4">
+              My darling Honeypie 🍯<br/>
+              Being with you feels like home.<br/>
+            </div>
+            <div class="card-content fade" id="content5">
+              You know, Adrita 🌸<br/>
+              The love of my life is U. <br/>
+              love you very much
+            </div>
+            <div class="card-content fade" id="content6">
+              My Beautiful Princess 🌹<br/>
+              Every day I fall for you<br/>
+              more and more...
+            </div>
+            <div class="card-content fade" id="content7">
+              My Dearest Adrita 💕<br/>
+             Can`t wait to meet you and perhaps marry You hehe <3
+            </div>
+          </div>
+          <div class="hearts">
+            <div class="one"></div><div class="two"></div><div class="three"></div>
+            <div class="four"></div><div class="five"></div>
+          </div>
+        </div>
+        <div class="shadow"></div>
+      </div>
+      <div class="click-instruction" id="instruction">Click the letter to open 💌</div>
+    </div>
+    
     <script>
-      $(document).ready(function () {
-        $(".container")
-          .mouseenter(function () {
-            $(".card").stop().animate(
-              {
-                top: "-90px",
-              },
-              "slow"
-            );
-          })
-          .mouseleave(function () {
-            $(".card").stop().animate(
-              {
-                top: 0,
-              },
-              "slow"
-            );
-          });
+      document.addEventListener('DOMContentLoaded', function() {
+        // --- AUTHENTICATION FLOW ---
+        const authPage1 = document.getElementById('auth-page-1');
+        const authPage2 = document.getElementById('auth-page-2');
+        const authPage3 = document.getElementById('auth-page-3');
+        const authPage4 = document.getElementById('auth-page-4');
+        const mainContent = document.getElementById('main-content');
+
+        const startBtn = document.getElementById('start-btn');
+        const checkBirthBtn = document.getElementById('check-birth-btn');
+        const checkNicknameBtn = document.getElementById('check-nickname-btn');
+        const showLetterBtn = document.getElementById('show-letter-btn');
+
+        startBtn.addEventListener('click', () => {
+            authPage1.style.display = 'none';
+            authPage2.style.display = 'flex';
+        });
+
+        checkBirthBtn.addEventListener('click', () => {
+            const month = document.getElementById('birth-month').value.trim().toLowerCase();
+            const day = document.getElementById('birth-day').value.trim();
+            const errorP = document.getElementById('birth-error');
+            const authBox = authPage2.querySelector('.auth-box');
+
+            if ((month === 'october' || month === 'oct' || month === '10') && day === '30') {
+                authPage2.style.display = 'none';
+                authPage3.style.display = 'flex';
+                errorP.textContent = '';
+            } else {
+                errorP.textContent = 'Oops, that\'s not it! Try again, cupcake!';
+                authBox.classList.add('shake');
+                setTimeout(() => authBox.classList.remove('shake'), 820);
+            }
+        });
+
+        checkNicknameBtn.addEventListener('click', () => {
+            const nickname = document.getElementById('nickname-input').value.trim().toLowerCase();
+            const errorP = document.getElementById('nickname-error');
+            const authBox = authPage3.querySelector('.auth-box');
+
+            if (nickname === 'pudding') {
+                authPage3.style.display = 'none';
+                authPage4.style.display = 'flex';
+                errorP.textContent = '';
+            } else {
+                errorP.textContent = 'Not quite! Think harder, buttercup!';
+                authBox.classList.add('shake');
+                setTimeout(() => authBox.classList.remove('shake'), 820);
+            }
+        });
+
+        showLetterBtn.addEventListener('click', () => {
+            authPage4.style.display = 'none';
+            mainContent.style.display = 'block';
+        });
+
+        // --- LETTER INTERACTION LOGIC ---
+        let currentPage = 0;
+        let isOpen = false;
+        const totalPages = 7; // Total number of content pages
+
+        document.querySelector(".container").addEventListener('click', function() {
+          if (!isOpen) {
+            // First click - open the letter
+            const card = document.querySelector(".card");
+            card.style.transition = "top 0.8s ease";
+            card.style.top = "-90px";
+            document.getElementById("instruction").textContent = "Click to continue reading 💕";
+            isOpen = true;
+          } else {
+            // Subsequent clicks - change pages
+            if (currentPage < totalPages - 1) { // Check if not on the last page
+              currentPage++;
+              
+              // Fade out current content
+              document.getElementById(`content${currentPage}`).classList.add('fade');
+              
+              // Fade in next content after delay
+              setTimeout(function() {
+                const nextContent = document.getElementById(`content${currentPage + 1}`);
+                nextContent.classList.remove('fade');
+              }, 300);
+              
+              if (currentPage === totalPages - 1) { // When we reach the last page
+                document.getElementById("instruction").textContent = "❤️ Thanks for reading my letter ❤️";
+              }
+            }
+          }
+        });
       });
     </script>
   </body>
